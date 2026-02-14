@@ -1,0 +1,48 @@
+{
+  "citrea-mainnet": {
+    "ENSRegistry": {
+      "address": "0x9fA2e2370dF8014EE485172bF79d10D6756034A8",
+      "startBlock": 2534703
+    },
+    "PublicResolver": {
+      "address": "0x716342C3231A50B55522F16f55ed76B5Bf29df76",
+      "startBlock": 2534703
+    },
+    "ETHRegistrarController": {
+      "address": "0xa08728ca65b6b980059dB463AD2714dfffa848cf",
+      "startBlock": 2534703
+    },
+    "BaseRegistrar": {
+      "address": "0xDB814a8C706e040F6615F37509ae3a38721577e8",
+      "startBlock": 2534703
+    },
+    "NameWrapper": {
+      "address": "0xd141a197c8A68D9175C201229ae3bf5a7972e8b1",
+      "startBlock": 2534703
+    },
+    "": ""
+  },
+  "citrea-testnet": {
+    "ENSRegistry": {
+      "address": "0x9fA2e2370dF8014EE485172bF79d10D6756034A8",
+      "startBlock": 2534703
+    },
+    "PublicResolver": {
+      "address": "0x716342C3231A50B55522F16f55ed76B5Bf29df76",
+      "startBlock": 2534703
+    },
+    "ETHRegistrarController": {
+      "address": "0xa08728ca65b6b980059dB463AD2714dfffa848cf",
+      "startBlock": 2534703
+    },
+    "BaseRegistrar": {
+      "address": "0xDB814a8C706e040F6615F37509ae3a38721577e8",
+      "startBlock": 2534703
+    },
+    "NameWrapper": {
+      "address": "0xd141a197c8A68D9175C201229ae3bf5a7972e8b1",
+      "startBlock": 2534703
+    },
+    "": ""
+  }
+}

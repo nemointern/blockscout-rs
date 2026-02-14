@@ -1,0 +1,29 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "name", "type": "string" },
+      { "indexed": true, "name": "label", "type": "bytes32" },
+      { "indexed": true, "name": "owner", "type": "address" },
+      { "indexed": false, "name": "baseCost", "type": "uint256" },
+      { "indexed": false, "name": "premium", "type": "uint256" },
+      { "indexed": false, "name": "expires", "type": "uint256" },
+      { "indexed": false, "name": "isBTC", "type": "bool" }
+    ],
+    "name": "NameRegistered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "name", "type": "string" },
+      { "indexed": true, "name": "label", "type": "bytes32" },
+      { "indexed": false, "name": "cost", "type": "uint256" },
+      { "indexed": false, "name": "expires", "type": "uint256" },
+      { "indexed": false, "name": "isBTC", "type": "bool" },
+      { "indexed": true, "name": "sender", "type": "address" }
+    ],
+    "name": "NameRenewed",
+    "type": "event"
+  }
+]

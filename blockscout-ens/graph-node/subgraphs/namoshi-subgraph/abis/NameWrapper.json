@@ -1,0 +1,53 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "node", "type": "bytes32" },
+      { "indexed": false, "name": "name", "type": "bytes" },
+      { "indexed": false, "name": "owner", "type": "address" },
+      { "indexed": false, "name": "fuses", "type": "uint32" },
+      { "indexed": false, "name": "expiry", "type": "uint64" }
+    ],
+    "name": "NameWrapped",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "node", "type": "bytes32" },
+      { "indexed": false, "name": "owner", "type": "address" }
+    ],
+    "name": "NameUnwrapped",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "node", "type": "bytes32" },
+      { "indexed": false, "name": "fuses", "type": "uint32" }
+    ],
+    "name": "FusesSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "node", "type": "bytes32" },
+      { "indexed": false, "name": "expiry", "type": "uint64" }
+    ],
+    "name": "ExpiryExtended",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "operator", "type": "address" },
+      { "indexed": true, "name": "from", "type": "address" },
+      { "indexed": true, "name": "to", "type": "address" },
+      { "indexed": false, "name": "id", "type": "uint256" },
+      { "indexed": false, "name": "value", "type": "uint256" }
+    ],
+    "name": "TransferSingle",
+    "type": "event"
+  }
+]

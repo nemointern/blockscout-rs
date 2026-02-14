@@ -1,0 +1,149 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  # ENS Registry
+  - kind: ethereum
+    name: ENSRegistry
+    network: citrea-mainnet
+    source:
+      address: "0x9fA2e2370dF8014EE485172bF79d10D6756034A8"
+      abi: ENSRegistry
+      startBlock: 2534703
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Domain
+        - Account
+        - Resolver
+      abis:
+        - name: ENSRegistry
+          file: ./abis/ENSRegistry.json
+      eventHandlers:
+        - event: NewOwner(indexed bytes32,indexed bytes32,address)
+          handler: handleNewOwner
+        - event: Transfer(indexed bytes32,address)
+          handler: handleTransfer
+        - event: NewResolver(indexed bytes32,address)
+          handler: handleNewResolver
+        - event: NewTTL(indexed bytes32,uint64)
+          handler: handleNewTTL
+      file: ./src/ensRegistry.ts
+
+  # Base Registrar
+  - kind: ethereum
+    name: BaseRegistrar
+    network: citrea-mainnet
+    source:
+      address: "0xDB814a8C706e040F6615F37509ae3a38721577e8"
+      abi: BaseRegistrar
+      startBlock: 2534703
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Registration
+        - Domain
+        - Account
+      abis:
+        - name: BaseRegistrar
+          file: ./abis/BaseRegistrar.json
+      eventHandlers:
+        - event: NameRegistered(indexed uint256,indexed address,uint256,bool)
+          handler: handleNameRegistered
+        - event: NameRenewed(indexed uint256,uint256,bool)
+          handler: handleNameRenewed
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/baseRegistrar.ts
+
+  # ETH Registrar Controller
+  - kind: ethereum
+    name: ETHRegistrarController
+    network: citrea-mainnet
+    source:
+      address: "0xa08728ca65b6b980059dB463AD2714dfffa848cf"
+      abi: ETHRegistrarController
+      startBlock: 2534703
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Registration
+        - Domain
+      abis:
+        - name: ETHRegistrarController
+          file: ./abis/ETHRegistrarController.json
+      eventHandlers:
+        - event: NameRegistered(string,indexed bytes32,indexed address,uint256,uint256,uint256,bool)
+          handler: handleNameRegisteredByController
+        - event: NameRenewed(string,indexed bytes32,uint256,uint256,bool,indexed address)
+          handler: handleNameRenewedByController
+      file: ./src/ethRegistrarController.ts
+
+  # Name Wrapper
+  - kind: ethereum
+    name: NameWrapper
+    network: citrea-mainnet
+    source:
+      address: "0xd141a197c8A68D9175C201229ae3bf5a7972e8b1"
+      abi: NameWrapper
+      startBlock: 2534703
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Domain
+        - WrappedDomain
+        - Account
+      abis:
+        - name: NameWrapper
+          file: ./abis/NameWrapper.json
+      eventHandlers:
+        - event: NameWrapped(indexed bytes32,bytes,address,uint32,uint64)
+          handler: handleNameWrapped
+        - event: NameUnwrapped(indexed bytes32,address)
+          handler: handleNameUnwrapped
+        - event: FusesSet(indexed bytes32,uint32)
+          handler: handleFusesSet
+        - event: ExpiryExtended(indexed bytes32,uint64)
+          handler: handleExpiryExtended
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+      file: ./src/nameWrapper.ts
+
+  # Public Resolver
+  - kind: ethereum
+    name: PublicResolver
+    network: citrea-mainnet
+    source:
+      address: "0x716342C3231A50B55522F16f55ed76B5Bf29df76"
+      abi: PublicResolver
+      startBlock: 2534703
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Resolver
+        - Domain
+      abis:
+        - name: PublicResolver
+          file: ./abis/PublicResolver.json
+      eventHandlers:
+        - event: AddrChanged(indexed bytes32,address)
+          handler: handleAddrChanged
+        - event: AddressChanged(indexed bytes32,uint256,bytes)
+          handler: handleMulticoinAddrChanged
+        - event: NameChanged(indexed bytes32,string)
+          handler: handleNameChanged
+        - event: ContenthashChanged(indexed bytes32,bytes)
+          handler: handleContentHashChanged
+        - event: TextChanged(indexed bytes32,indexed string,string,string)
+          handler: handleTextChanged
+      file: ./src/resolver.ts

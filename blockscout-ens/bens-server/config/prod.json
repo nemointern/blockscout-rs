@@ -297,6 +297,15 @@
         "use_protocols": [
           "taiko"
         ]
+      },
+      "4114": {
+        "blockscout": {
+          "url": "https://explorer.mainnet.citrea.xyz"
+        },
+        "use_protocols": [
+          "namoshi"
+        ],
+        "rpc_url": "https://rpc.mainnet.citrea.xyz"
       }
     },
     "protocols": {
@@ -763,6 +772,24 @@
           "description": "SPACE ID is a universal domain name and identity platform",
           "icon_url": "https://i.imgur.com/yYc2C6V.png",
           "docs_url": "https://docs.space.id/"
+        }
+      },
+      "namoshi": {
+        "tld_list": ["btc", "citrea"],
+        "network_id": 4114,
+        "subgraph_name": "namoshi-subgraph",
+        "address_resolve_technique": "all_domains",
+        "specific": {
+          "type": "ens_like",
+          "native_token_contract": "0xDB814a8C706e040F6615F37509ae3a38721577e8",
+          "registry_contract": "0x9fA2e2370dF8014EE485172bF79d10D6756034A8"
+        },
+        "meta": {
+          "short_name": "Namoshi",
+          "title": "Namoshi Name Service",
+          "description": "Native naming service for Citrea network with .btc and .citrea domains",
+          "icon_url": "",
+          "docs_url": "https://docs.namoshi.xyz"
         }
       }
     }

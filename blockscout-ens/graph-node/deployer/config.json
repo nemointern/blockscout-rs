@@ -129,6 +129,11 @@
       "subgraph_path": "../subgraphs/zns-subgraph",
       "subgraph_name": "zns-unichain-subgraph",
       "network": "unichain-mainnet"
+    },
+    "namoshi": {
+      "subgraph_path": "../subgraphs/namoshi-subgraph",
+      "subgraph_name": "namoshi-subgraph",
+      "network": "citrea-mainnet"
     }
   }
 }
